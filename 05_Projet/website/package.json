@@ -1,0 +1,25 @@
+{
+  "name": "website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node server",
+    "build": "next build",
+    "export": "next export",
+    "start": "cross-env NODE_ENV=production node server"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "date-and-time": "^0.13.1",
+    "express": "^4.17.1",
+    "express-http-to-https": "^1.1.4",
+    "next": "9.4.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "socket.io-client": "^2.3.0",
+    "universal-cookie": "^4.0.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
+  }
+}
