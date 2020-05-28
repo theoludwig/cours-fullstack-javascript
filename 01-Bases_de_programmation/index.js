@@ -22,6 +22,11 @@ var object = { // Object
     deuxiemeCle: false
 };
 
+// Accéder aux valeurs des tableaux/objets
+array[0]; // accède à la 1ère valeur
+object.cle;
+object["deuxiemeCle"];
+
 // Pour connaître le type d'une variable
 console.log(typeof string);
 
@@ -70,10 +75,7 @@ function additionne(nombre1, nombre2) {
 }
 additionne(5, 7);
 
-/* 6 - Utiliser les Array et Object + Opérateurs */
-array[0]; // accède à la 1ère valeur
-object.cle;
-object["deuxiemeCle"];
+/* 6 - Opérateurs */
 
 // Maths
 var x = 20;

@@ -1,13 +1,13 @@
 /* 1 - Introduction 
     Javascript est un langage de programmation qui fait partie des languages qu'on appelle orientée objet (POO).
-    Tous qu'on utilise en javascript est un objet (String, Number, Array) etc.
+    Tous qu'on utilise en JavaScript est un objet (String, Number, Array) etc.
     La POO permet de mieux organiser notre code, d'éviter les répétitions.
 */
 
 console.log(String);
 
 /* 2 - Classes */
-// Pour créer un objet, il faut déjà définir à quoi il va ressembler. Pour ça on va utiliser des classes.
+// Pour créer un objet, il faut définir à quoi, il va ressembler. Pour cela, on va utiliser des classes.
 
 class Personne {
     constructor(nom, age) {
