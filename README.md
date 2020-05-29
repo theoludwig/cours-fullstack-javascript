@@ -18,7 +18,7 @@
 Vous voulez apprendre le **JavaScript** et débuter dans la création d'application "**fullstack**" ? 
 Vous êtes au bon endroit, car vous êtes sur le **code source** d'une série de **tutoriels sur YouTube** pour **apprendre le JavaScript**.
 
-**La playlist n'est pas encore disponible... Bientôt 👀**
+[Lien de la playlist YouTube](https://www.youtube.com/playlist?list=PLABJv36mqpSgpSC3wRilKa1f9p7lytDYE).
 
 ## 📚 Prérequis 
 
