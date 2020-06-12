@@ -1,13 +1,55 @@
-import { useEffect, useContext, useRef, useCallback, Fragment } from "react";
+import { useEffect, useState, useRef, useCallback, Fragment } from "react";
 
-import { api } from '../utils/api';
+import { socket, api } from '../utils/api';
 import MessageCard from './MessageCard';
-import { MessagesContext } from '../contexts/MessagesContext';
+
+function useMessages() {
+    const [messagesData, setMessagesData] = useState({
+        totalItems: 0,
+        hasMore: true,
+        rows: []
+    });
+    const [isLoadingMessages, setLoadingMessages] = useState(false);
+
+    useEffect(() => {
+        socket.on("messages", (socketData) => {
+            const isAtBottom = ((window.innerHeight + window.scrollY) >= document.body.offsetHeight);
+
+            setMessagesData((oldData) => {
+                const newMessagesData = {
+                    totalItems: oldData.totalItems,
+                    hasMore: oldData.hasMore, 
+                    rows: oldData.rows
+                }
+                switch (socketData.action) {
+                    case "create": {
+                        newMessagesData.rows.push(socketData.messageCreated);
+                        break;
+                    }
+                    case "update": {
+                        const messageIndex = newMessagesData.rows.findIndex((message) => message.id === socketData.messageUpdated.id);
+                        if (messageIndex !== -1) newMessagesData.rows[messageIndex] = socketData.messageUpdated;
+                        break;
+                    }
+                    case "delete": {
+                        const messageIndex = newMessagesData.rows.findIndex((message) => message.id === socketData.deletedMessageId);
+                        if (messageIndex !== -1) newMessagesData.rows.splice(messageIndex, 1);
+                        break;
+                    }
+                }
+                return newMessagesData;
+            });
+            
+            if (isAtBottom) window.scrollTo(0, document.body.scrollHeight);
+        });
+    }, []);
+
+    return { messagesData, setMessagesData, setLoadingMessages, isLoadingMessages };
+}
+
 let pageMessages = 1;
-
 const MessagesList = (props) => {
-
-    const { messagesData, setMessagesData, setLoadingMessages, isLoadingMessages } = useContext(MessagesContext);
+    const { messagesData, setMessagesData, setLoadingMessages, isLoadingMessages } = useMessages();
 
     // Récupère les messages initiales
     useEffect(() => {

@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Fragment } from "react";
 import Cookies from "universal-cookie";
 
-import MessagesContextProvider from '../contexts/MessagesContext';
 import redirectSSR from "../utils/redirectSSR";
 import ChatForm from '../components/ChatForm';
 import MessagesList from '../components/MessagesList';
@@ -15,10 +14,7 @@ const Chat = (props) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <MessagesContextProvider>
-                <MessagesList pseudo={props.pseudo} />
-            </MessagesContextProvider>
-            
+            <MessagesList pseudo={props.pseudo} />
             <ChatForm pseudo={props.pseudo} />
 
             <style jsx global>{`
