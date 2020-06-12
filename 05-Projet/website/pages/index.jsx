@@ -33,7 +33,7 @@ const Home = () => {
                 <form onSubmit={handleSubmit} className="connexion">
                     <input onChange={handleChange} value={inputState.pseudo} id="pseudo" name="pseudo" type="text" placeholder="Votre pseudo" required />
                     <div className="text-center">
-                        <ButtonDark>Envoyer</ButtonDark>
+                        <ButtonDark type="submit">Envoyer</ButtonDark>
                     </div>
                 </form>
             </div>

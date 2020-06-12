@@ -3,7 +3,7 @@ import { Fragment } from "react";
 const ButtonDark = (props) => {
     return (
         <Fragment>
-            <button className="btn btn-dark" type={props.type}>
+            <button className="btn btn-dark" { ...props }>
                 {props.children}
             </button>
 
@@ -32,10 +32,6 @@ const ButtonDark = (props) => {
             `}</style>
         </Fragment>
     );
-}
-
-ButtonDark.defaultProps = {
-    type: "submit"
 }
 
 export default ButtonDark;

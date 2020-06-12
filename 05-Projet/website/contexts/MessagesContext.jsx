@@ -21,16 +21,21 @@ function MessagesProvider(props) {
                     hasMore: oldData.hasMore, 
                     rows: oldData.rows
                 }
-                if (socketData.action === "create") {
-                    newMessagesData.rows.push(socketData.messageCreated);
-                } 
-                else if (socketData.action === "update") {
-                    const messageIndex = newMessagesData.rows.findIndex((message) => message.id === socketData.messageUpdated.id);
-                    if (messageIndex !== -1) newMessagesData.rows[messageIndex] = socketData.messageUpdated;
-                }
-                else if (socketData.action === "delete") {
-                    const messageIndex = newMessagesData.rows.findIndex((message) => message.id === socketData.deletedMessageId);
-                    if (messageIndex !== -1) newMessagesData.rows.splice(messageIndex, 1);
+                switch (socketData.action) {
+                    case "create": {
+                        newMessagesData.rows.push(socketData.messageCreated);
+                        break;
+                    }
+                    case "update": {
+                        const messageIndex = newMessagesData.rows.findIndex((message) => message.id === socketData.messageUpdated.id);
+                        if (messageIndex !== -1) newMessagesData.rows[messageIndex] = socketData.messageUpdated;
+                        break;
+                    }
+                    case "delete": {
+                        const messageIndex = newMessagesData.rows.findIndex((message) => message.id === socketData.deletedMessageId);
+                        if (messageIndex !== -1) newMessagesData.rows.splice(messageIndex, 1);
+                        break;
+                    }
                 }
                 return newMessagesData;
             });

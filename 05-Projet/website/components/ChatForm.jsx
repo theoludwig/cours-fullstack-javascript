@@ -10,24 +10,22 @@ const ChatForm = () => {
     const [inputState, setInputState] = useState({ message: "" });
 
     const handleChange = (event) => {
-        const inputStateNew = { ...inputState }
+        const inputStateNew = { ...inputState };
         inputStateNew[event.target.name] = event.target.value;
         setInputState(inputStateNew);
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (pseudo) {
-            await api.post("/messages", { pseudo, message: inputState.message });
-            setInputState({ message: "" });
-        }
+        await api.post("/messages", { pseudo, message: inputState.message });
+        setInputState({ message: "" });
     }
 
     return (
         <Fragment>
             <form onSubmit={handleSubmit} className="container">
                 <textarea value={inputState.message} onChange={handleChange} rows="6" name="message" id="message" placeholder="Entrez un message..."></textarea>
-                <ButtonDark>Envoyer</ButtonDark>
+                <ButtonDark type="submit">Envoyer</ButtonDark>
             </form>
 
             <style jsx>{`
