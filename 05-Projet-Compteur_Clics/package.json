@@ -1,0 +1,14 @@
+{
+  "name": "click-counter",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "parcel ./src/*.html ./src/pages/*.html -p 3000",
+    "build": "parcel build ./src/*.html ./src/pages/*.html",
+    "format": "prettier --write \"./src/**/*.{ts,js,css,scss,html}\""
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "prettier": "^2.0.5"
+  }
+}

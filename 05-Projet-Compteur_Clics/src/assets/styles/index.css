@@ -1,0 +1,17 @@
+.counter-container {
+    display: flex;
+    flex-flow: column wrap;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+#counter-number {
+    font-size: 100px;
+    margin: 0;
+}
+.button-container {
+    display: flex;
+}
+.button-container > button {
+    margin: 10px;
+}
