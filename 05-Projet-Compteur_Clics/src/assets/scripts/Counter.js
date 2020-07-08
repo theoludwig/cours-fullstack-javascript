@@ -5,6 +5,7 @@ class Counter {
      * @param {number} initialStep
      */
     constructor(element, initialCount = 0, initialStep = 1) {
+        this.listeners = [];
         this.element = element;
         this.count = initialCount;
         this.step = initialStep;
@@ -25,6 +26,7 @@ class Counter {
         if (isNaN(count)) throw "count should be of type number.";
         this._count = count;
         this._element.textContent = count;
+        this.listeners.forEach((listener) => listener(count));
     }
 
     /**
@@ -66,6 +68,10 @@ class Counter {
      */
     changeStep(input) {
         input.addEventListener("change", (event) => (this.step = event.target.value));
+    }
+
+    addListener(listenerFunction) {
+        this.listeners.push(listenerFunction);
     }
 }
 
