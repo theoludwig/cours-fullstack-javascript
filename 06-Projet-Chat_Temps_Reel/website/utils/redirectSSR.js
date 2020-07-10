@@ -1,6 +1,6 @@
-function redirectSSR(context, path)  {
-    context.res.writeHead(301, { Location: path });
-    context.res.end();
+function redirectSSR (context, path) {
+  context.res.writeHead(301, { Location: path })
+  context.res.end()
 }
 
-export default redirectSSR;
+export default redirectSSR

@@ -1,20 +1,20 @@
-const { Router }         = require('express');
-const messagesController = require('../controllers/messages');
+const { Router } = require('express')
+const messagesController = require('../controllers/messages')
 
-const MessagesRouter = Router();
+const MessagesRouter = Router()
 
 MessagesRouter.route('/')
 
-    .get(messagesController.getMessages)
+  .get(messagesController.getMessages)
 
-    .post(messagesController.postMessage);
+  .post(messagesController.postMessage)
 
 MessagesRouter.route('/:id')
 
-    .get(messagesController.getMessageById)
-    
-    .delete(messagesController.deleteMessageById)
+  .get(messagesController.getMessageById)
 
-    .put(messagesController.putMessageById);
+  .delete(messagesController.deleteMessageById)
 
-module.exports = MessagesRouter;
+  .put(messagesController.putMessageById)
+
+module.exports = MessagesRouter

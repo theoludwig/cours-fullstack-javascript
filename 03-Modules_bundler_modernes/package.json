@@ -1,21 +1,21 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "parcel ./src/index.html -p 8080",
-    "build": "parcel build ./src/index.html"
+    "build": "parcel build ./src/index.html",
+    "format": "standard \"./src/**/*.js\" --fix | snazzy || true",
+    "standard-check": "standard \"./src/**/*.js\" --verbose | snazzy || true"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.6",
-    "@babel/plugin-transform-runtime": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "parcel": "^1.12.4"
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "parcel": "^1.12.4",
+    "snazzy": "^8.0.0",
+    "standard": "^14.3.4"
   },
   "dependencies": {
     "ms": "^2.1.2"

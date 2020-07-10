@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Compteur de clics</title>
-        <link rel="icon" type="image/png" href="./assets/images/logo_js.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compteur de clics</title>
+    <link rel="icon" type="image/png" href="./assets/images/logo_js.png" />
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="./assets/styles/normalize.css" />
-        <link rel="stylesheet" href="./assets/styles/general.css" />
-        <link rel="stylesheet" href="./assets/styles/index.css" />
-    </head>
-    <body>
-        <main class="counter-container">
-            <h1 id="counter-number">0</h1>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css" />
+    <link rel="stylesheet" href="./assets/styles/general.css" />
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+  </head>
+  <body>
+    <main class="counter-container">
+      <h1 id="counter-number">0</h1>
 
-            <div class="button-container">
-                <button id="subtract-button" class="btn btn-dark">Soustraire</button>
-                <button id="reset-button" class="btn btn-dark">Remise à zéro</button>
-                <button id="add-button" class="btn btn-dark">Ajouter</button>
-            </div>
+      <div class="button-container">
+        <button id="subtract-button" class="btn btn-dark">Soustraire</button>
+        <button id="reset-button" class="btn btn-dark">Remise à zéro</button>
+        <button id="add-button" class="btn btn-dark">Ajouter</button>
+      </div>
 
-            <label for="step-input">Ajuster le pas :</label>
-            <input type="number" name="step-input" id="step-input" min="1" step="1" value="1" />
-            <p id="number-fact"></p>
-        </main>
+      <label for="step-input">Ajuster le pas :</label>
+      <input
+        type="number"
+        name="step-input"
+        id="step-input"
+        min="1"
+        step="1"
+        value="1"
+      />
+      <p id="number-fact"></p>
+    </main>
 
-        <!-- Scripts -->
-        <script defer src="./assets/scripts/index.js"></script>
-    </body>
+    <!-- Scripts -->
+    <script defer src="./assets/scripts/index.js"></script>
+  </body>
 </html>

@@ -1,11 +1,11 @@
-const socketIo =  require('socket.io');
+const socketIo = require('socket.io')
 
 class SocketIO {
-    static io = null;
-
-    static init(httpServer) {
-        SocketIO.io = socketIo(httpServer);
-    }
+  static init (httpServer) {
+    SocketIO.io = socketIo(httpServer)
+  }
 }
 
-module.exports = SocketIO;
+SocketIO.io = null
+
+module.exports = SocketIO

@@ -1,13 +1,12 @@
-import { Fragment } from "react";
 
 const ButtonDark = (props) => {
-    return (
-        <Fragment>
-            <button className="btn btn-dark" { ...props }>
-                {props.children}
-            </button>
+  return (
+    <>
+      <button className='btn btn-dark' {...props}>
+        {props.children}
+      </button>
 
-            <style jsx>{`
+      <style jsx>{`
                 .btn {
                     cursor: pointer;
                     border: 1px solid transparent;
@@ -30,8 +29,8 @@ const ButtonDark = (props) => {
                     border-color: #343a40;
                 }
             `}</style>
-        </Fragment>
-    );
+    </>
+  )
 }
 
-export default ButtonDark;
+export default ButtonDark
