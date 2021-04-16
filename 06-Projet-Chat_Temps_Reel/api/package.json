@@ -5,19 +5,18 @@
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js",
-    "format": "standard \"./**/*.js\" --fix | snazzy || true",
-    "standard-check": "standard \"./**/*.js\" --verbose | snazzy || true"
+    "lint": "standard | snazzy"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
-    "socket.io": "^2.4.0"
+    "socket.io": "^4.0.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4",
-    "snazzy": "^8.0.0",
-    "standard": "^14.3.4"
+    "nodemon": "^2.0.7",
+    "snazzy": "^9.0.0",
+    "standard": "^16.0.3"
   },
   "nodemonConfig": {
     "ignore": [
